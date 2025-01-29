@@ -10,33 +10,34 @@
             margin: 0;
             padding: 0;
             line-height: 1.6;
-            background-color: #f4f4f9;
+            background-color: #f0f8ff; /* Light blue background */
             color: #333;
         }
         header {
-            background: #4CAF50;
+            background: #2196F3; /* Blue header */
             color: white;
-            padding: 2rem 0;
+            padding: 3rem 0; /* Increased padding */
             text-align: center;
         }
         header img {
-            width: 150px;
-            height: 150px;
+            width: 200px; /* Larger image */
+            height: 200px; /* Larger image */
             border-radius: 50%;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem; /* Increased margin */
         }
         nav {
             display: flex;
             justify-content: center;
-            background: #333;
+            background: #1976D2; /* Darker blue nav */
         }
         nav a {
             color: white;
             padding: 1rem;
             text-decoration: none;
+            transition: background-color 0.3s ease;
         }
         nav a:hover {
-            background: #4CAF50;
+            background: #0D47A1; /* Even darker hover color */
         }
         .container {
             max-width: 900px;
@@ -47,17 +48,17 @@
             margin: 2rem 0;
         }
        section h2 {
-            border-bottom: 2px solid #4CAF50;
+            border-bottom: 2px solid #2196F3; /* Blue border */
             padding-bottom: 0.5rem;
         }
         footer {
             text-align: center;
-            background: #333;
+            background: #1976D2;
             color: white;
             padding: 1rem 0;
             margin-top: 2rem;
         }
-       
+
         .portfolio-item {
             margin-bottom: 1rem;
         }
@@ -119,15 +120,16 @@
         }
         .btn {
             display: inline-block;
-            padding: 0.5rem 1rem;
+            padding: 0.7rem 1.2rem; /* increased padding */
             color: white;
-            background: #4CAF50;
+            background: #2196F3;
             text-decoration: none;
             border-radius: 5px;
             margin-top: 1rem;
+            transition: background-color 0.3s ease;
         }
         .btn:hover {
-            background: #45a049;
+            background: #1976D2; /* Darker hover color */
         }
          /* Responsive adjustments */
         @media (max-width: 768px) {
@@ -141,6 +143,10 @@
              nav a {
                 padding: 0.7rem;
              }
+              header img {
+                width: 150px;
+                 height: 150px;
+               }
         }
     </style>
 </head>
@@ -163,12 +169,12 @@
     <div class="container">
         <section id="about">
             <h2>About Me</h2>
-            <p>Hello! I'm Emmanuel Ansah, a statistician and data scientist with a strong passion for education, mentorship, and leveraging data to solve real-world problems. Currently pursuing a Master's at AIMS Rwanda, I hold a first-class degree in Statistics from KNUST and have hands-on experience in data analysis, machine learning, and statistical computing.</p>
-            <p>I am skilled in SPSS, R, Python, SQL, Microsoft Power BI, and LaTeX. I have experience in healthcare, finance, and manufacturing, and I actively mentor students and engage in tutoring programs to improve academic performance. My expertise spans from statistical modeling to implementing machine learning techniques to solve real world challenges and improve existing systems.</p>
+             <p>Hello! I'm Emmanuel Ansah, a statistician and data scientist with a strong passion for education, mentorship, and leveraging data to solve real-world problems. Currently pursuing a Master's at AIMS Rwanda, I hold a first-class degree in Statistics from KNUST and have hands-on experience in data analysis, machine learning, and statistical computing.</p>
+            <p>I am skilled in SPSS, R, Python, and LaTeX. I have experience in healthcare, finance, and manufacturing, and I actively mentor students and engage in tutoring programs to improve academic performance. My expertise spans from statistical modeling to implementing machine learning techniques to solve real world challenges and improve existing systems.</p>
             <p>I'm a problem-solver, a lifelong learner, and I'm committed to contributing positively through my work. Let's connect and explore how we can innovate together!</p>
         </section>
 
-        <section id="portfolio">
+       <section id="portfolio">
             <h2>Portfolio</h2>
             <div class="portfolio-item">
                 <h4 onclick="togglePortfolioItem(this)">Piano App
@@ -223,25 +229,6 @@
                     <li>Undertook an undergraduate project on Modeling The Incidence Of Scabies Using ARIMA And Generalized Linear Model.</li>
                 </ul>
             </div>
-             <div class="experience-item">
-            <h4>Data Analyst Intern, Guinness Ghana</h4>
-                <h5>Aug 2021 – Nov 2021</h5>
-                <ul>
-                 <li>Analyzed production data to identify trends and insights, contributing to process improvements.</li>
-                 <li>Supported quality control by conducting statistical analyses on production samples.</li>
-                 <li>Assisted in the development of data-driven reports and dashboards for management.</li>
-               </ul>
-            </div>
-             <div class="experience-item">
-            <h4>Research Intern, MB Laboratory Services, Kumasi - Ghana</h4>
-           <h5>2022-2024</h5>
-             <ul>
-                <li>Managed and cleaned large datasets from routine lab tests to ensure data integrity and accuracy.</li>
-                 <li>Calculated sensitivity, specificity, and predictive values to evaluate the accuracy of diagnostic tests.</li>
-                <li>Worked closely with lab technicians and medical staff to develop data driven reports to inform decisions.</li>
-             </ul>
-            </div>
-
         </section>
 
          <section id="skills">
@@ -251,11 +238,7 @@
                     <h4>Statistical Analysis</h4>
                     <p>Proficient in SPSS, R (data analysis), Python (TensorFlow) for machine learning.</p>
                 </div>
-                 <div class="skill-item">
-                    <h4>Software Tools</h4>
-                    <p>Experienced with Microsoft Office, LATEX, SQL, Microsoft Power BI.</p>
-                </div>
-                 <div class="skill-item">
+                  <div class="skill-item">
                      <h4>Linux</h4>
                      <p>Terminal commands and shell scripting.</p>
                 </div>
@@ -279,6 +262,10 @@
                        <h4>Topological Data Analysis</h4>
                      <p>Skilled in using topological concepts to analyze complex data structures and patterns.</p>
                 </div>
+                  <div class="skill-item">
+                    <h4>Software Tools</h4>
+                    <p>Experienced with Microsoft Office and LATEX.</p>
+                </div>
             </div>
         </section>
 
@@ -301,7 +288,7 @@
             <p>LinkedIn: <a href="https://www.linkedin.com/in/emmanuel-ansah-9b193a216/" target="_blank">linkedin.com/in/emmanuel-ansah-9b193a216</a></p>
             <p>GitHub: <a href="https://github.com/emmanuelansah" target="_blank">github.com/emmanuelansah</a></p>
              <p>YouTube: <a href="https://youtube.com/@amt_eansah?si=tgoRMIE6tJkyBF9e" target="_blank">youtube.com/@amt_eansah</a></p>
-           
+
             <a href="https://drive.google.com/drive/folders/1hevWDNF2occ5TUZyL1DXmHam1BqVovz2?usp=drive_link" class="btn" target="_blank">View Certificates/Awards</a>
         </section>
     </div>
