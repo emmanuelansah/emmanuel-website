@@ -95,6 +95,423 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            transition: color 0.3s ease;
+        }
+         body.dark-mode .portfolio-item h4 {
+             color:#e0e0e0;
+         }
+        .portfolio-item h4:hover{
+            color: #2196F3;
+        }
+         body.dark-mode .portfolio-item h4:hover{
+            color: #90caf9;
+         }
+        .portfolio-item h4::after {
+            content: "+";
+            font-size: 1.5em;
+            transition: transform 0.3s ease-in-out;
+        }
+        .portfolio-item h4.active::after {
+            content: "-";
+        }
+        .portfolio-item p {
+            display: none;
+            margin-top: 0.5rem;
+             transition: opacity 0.3s ease-in-out;
+        }
+        .portfolio-item p.active {
+            display: block;
+            opacity: 1;
+        }
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .skill-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        body.dark-mode .skill-item {
+            background: #1e1e1e;
+            color: #e0e0e0;
+        }
+        .skill-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+        .skill-item h4 {
+            margin-bottom: 0.5rem;
+            border-bottom: 1px solid #ddd;
+        }
+        .experience-item {
+            margin-bottom: 1.5rem;
+        }
+        .experience-item h4 {
+            margin-bottom: 0.5rem;
+             transition: color 0.3s ease;
+        }
+        .experience-item h4:hover{
+            color: #2196F3;
+        }
+          body.dark-mode .experience-item h4 {
+             color:#e0e0e0;
+         }
+           body.dark-mode .experience-item h4:hover{
+            color: #90caf9;
+        }
+        .experience-item h5 {
+            font-style: italic;
+            color: #777;
+            margin-bottom: 0.5rem;
+             transition: color 0.3s ease;
+        }
+         body.dark-mode .experience-item h5 {
+            color: #a0a0a0;
+         }
+
+        .experience-item ul {
+            padding-left: 20px;
+            margin-top: 0.5rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.7rem 1.2rem; /* increased padding */
+            color: white;
+            background: #2196F3;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background: #1976D2; /* Darker hover color */
+        }
+        .dark-mode-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #2196F3;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .dark-mode-toggle:hover {
+            background: #1976D2;
+        }
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem 0;
+            }
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav a {
+                padding: 0.7rem;
+            }
+            header img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://github.com/emmanuelansah/emmanuel-website/blob/main/new_pic.jpg?raw=true" alt="Emmanuel's Picture">
+        <h1>Emmanuel Ansah</h1>
+        <p>Statistician | Data Scientist | Educator</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hello! I'm Emmanuel Ansah, a statistician and data scientist with a strong passion for education, mentorship, and leveraging data to solve real-world problems. Currently pursuing a Master's at AIMS Rwanda, I hold a first-class degree in Statistics from KNUST and have hands-on experience in data analysis, machine learning, and statistical computing.</p>
+            <p>I am skilled in SPSS, R, Python, and LaTeX. I have experience in healthcare, finance, and manufacturing, and I actively mentor students and engage in tutoring programs to improve academic performance. My expertise spans from statistical modeling to implementing machine learning techniques to solve real world challenges and improve existing systems.</p>
+            <p>I'm a problem-solver, a lifelong learner, and I'm committed to contributing positively through my work. Let's connect and explore how we can innovate together!</p>
+        </section>
+
+        <section id="portfolio">
+            <h2>Portfolio</h2>
+            <div class="portfolio-item">
+                <h4 onclick="togglePortfolioItem(this)">Piano App
+                    <span></span>
+                </h4>
+                <p>A tool designed to help users learn to play all keys on the piano, enhancing their musical skills through interactive practice.</p>
+            </div>
+            <div class="portfolio-item">
+                <h4 onclick="togglePortfolioItem(this)">Data Analysis Projects
+                    <span></span>
+                </h4>
+                <p>A suite of projects focused on extracting insightful statistical findings from data in various industries, including healthcare and finance. These analyses guide strategic decisions and process enhancements.</p>
+            </div>
+            <div class="portfolio-item">
+                <h4 onclick="togglePortfolioItem(this)">Machine Learning Models
+                    <span></span>
+                </h4>
+                <p>Projects involving the development of machine learning models that provide predictive insights for marketing, sales optimization, and resource allocation, demonstrating practical application of advanced algorithms. </p>
+            </div>
+            <div class="portfolio-item">
+                <h4 onclick="togglePortfolioItem(this)">Scabies Incidence Modeling
+                    <span></span>
+                </h4>
+                <p>Research project employing ARIMA and GLM methods to analyze and predict the incidence of scabies at Kokofu Government Hospital, contributing to public health planning and intervention.</p>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="experience-item">
+                <h4>Teaching Assistant, Department of Mathematics (KNUST)</h4>
+                <h5>2023-2024</h5>
+                <ul>
+                    <li>Prepared and distributed course materials, including PowerPoint presentations, handouts, and problem sets.</li>
+                    <li>Organized tutorial sessions for students to clarify any problems encountered within the course.</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <h4>Deputy Audit Head, Ghana Association of Statistics Students (KNUST)</h4>
+                <h5>2022-2023</h5>
+                <ul>
+                    <li>Reviewed the Association's income and expenditure accounts.</li>
+                    <li>Reported any financial discrepancies to the Association leaders.</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <h4>Research Assistant, Department of Mathematics (KNUST)</h4>
+                <h5>2023-2024</h5>
+                <ul>
+                    <li>Assisted faculty members in the statistical analysis of their research works.</li>
+                    <li>Guided undergraduate students in selecting an appropriate statistical method for their research.</li>
+                    <li>Undertook an undergraduate project on Modeling The Incidence Of Scabies Using ARIMA And Generalized Linear Model.</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <h4>Logistics Supervisor Intern, Livegreens Landscaping Services, Ghana</h4>
+                <h5>Sept 2022 – Nov 2022</h5>
+                <ul>
+                    <li>Supervised landscaping projects, ensuring timely and high-quality delivery.</li>
+                    <li>Conducted statistical analyses on project data to optimize resource use and improve efficiency.</li>
+                    <li>Assisted in preparing research reports and presentations for stakeholders.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills">
+                <div class="skill-item">
+                    <h4>Statistical Analysis</h4>
+                    <p>Proficient in SPSS, R (data analysis), Python (TensorFlow) for machine learning.</p>
+                </div>
+                <div class="skill-item">
+                    <h4>Linux</h4>
+                    <p>Terminal commands and shell scripting.</p>
+                </div>
+                <div class="skill-item">
+                    <h4>Personal Strengths</h4>
+                    <p>Excellent communication, leadership, teamwork, public speaking, and organizational skills</p>
+                </div>
+                <div class="skill-item">
+                    <h4>Languages</h4>
+                    <p>English, Basic Communication in French</p>
+                </div>
+                <div class="skill-item">
+                    <h4>Machine Learning</h4>
+                    <p>Expertise in developing and implementing machine learning algorithms and models</p>
+                </div>
+                <div class="skill-item">
+                    <h4>Big Data Analytics</h4>
+                    <p>Proficient in analyzing and interpreting large, complex datasets to derive meaningful insights.</p>
+                </div>
+                <div class="skill-item">
+                    <h4>Topological Data Analysis</h4>
+                    <p>Skilled in using topological concepts to analyze complex data structures and patterns.</p>
+                </div>
+                <div class="skill-item">
+                    <h4>Software Tools</h4>
+                    <p>Experienced with Microsoft Office and LATEX.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements">
+            <h2>Achievements</h2>
+            <ul>
+                <li><strong>2023:</strong> Second Best Graduating Student in Statistics Class, KNUST</li>
+                <li><strong>2023/2024:</strong> Teaching Assistant of the Year for Mathematics Department, KNUST</li>
+                <li><strong>2020/2021:</strong> Best Performing Male Student in Statistics 2, KNUST</li>
+                <li><strong>Certifications:</strong> Data Science, Machine Learning, and Professional Ethics</li>
+                <li><strong>Publications:</strong> Research on the incidence of scabies using advanced statistical models</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Feel free to reach out to me:</p>
+            <p>Email: <a href="mailto:eansah754@gmail.com">eansah754@gmail.com</a></p>
+            <p>Email: <a href="mailto:emmanuel.ansah@aims.ac.rw">emmanuel.ansah@aims.ac.rw</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/emmanuel-ansah-9b193a216/" target="_blank">linkedin.com/in/emmanuel-ansah-9b193a216</a></p>
+            <p>GitHub: <a href="https://github.com/emmanuelansah" target="_blank">github.com/emmanuelansah</a></p>
+            <p>YouTube: <a href="https://youtube.com/@amt_eansah?si=tgoRMIE6tJkyBF9e" target="_blank">youtube.com/@amt_eansah</a></p>
+
+            <a href="https://drive.google.com/drive/folders/1hevWDNF2occ5TUZyL1DXmHam1BqVovz2?usp=drive_link" class="btn" target="_blank">View Certificates/Awards</a>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2025 Emmanuel Ansah. All Rights Reserved.</p>
+    </footer>
+
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+    <script>
+        function togglePortfolioItem(el) {
+            const portfolioItem = el.parentElement;
+            const portfolioItemContent = portfolioItem.querySelector("p");
+            el.classList.toggle("active");
+            portfolioItemContent.classList.toggle("active");
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        document.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                if (sectionTop < window.innerHeight - 100) {
+                    section.classList.add('visible');
+                }
+            });
+        });
+
+        // Initial check to show sections in viewport on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                if (sectionTop < window.innerHeight - 100) {
+                    section.classList.add('visible');
+                }
+            });
+        });
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmanuel Ansah - Personal Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f0f8ff; /* Light blue background */
+            color: #333;
+            transition: background-color 0.5s, color 0.5s;
+        }
+        body.dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        header {
+            background: #2196F3; /* Blue header */
+            color: white;
+            padding: 3rem 0; /* Increased padding */
+            text-align: center;
+            transition: background-color 0.5s;
+        }
+        body.dark-mode header {
+            background: #0D47A1;
+        }
+        header img {
+            width: 200px; /* Larger image */
+            height: 200px; /* Larger image */
+            border-radius: 50%;
+            margin-bottom: 1.5rem; /* Increased margin */
+            transition: transform 0.3s ease-in-out;
+        }
+        header img:hover {
+            transform: scale(1.1);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #1976D2; /* Darker blue nav */
+            transition: background-color 0.5s;
+        }
+        body.dark-mode nav {
+            background: #0D47A1;
+        }
+        nav a {
+            color: white;
+            padding: 1rem;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        nav a:hover {
+            background: #0D47A1; /* Even darker hover color */
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 2rem;
+        }
+        section {
+            margin: 2rem 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        section h2 {
+            border-bottom: 2px solid #2196F3; /* Blue border */
+            padding-bottom: 0.5rem;
+        }
+        footer {
+            text-align: center;
+            background: #1976D2;
+            color: white;
+            padding: 1rem 0;
+            margin-top: 2rem;
+            transition: background-color 0.5s;
+        }
+        body.dark-mode footer {
+            background: #0D47A1;
+        }
+        .portfolio-item {
+            margin-bottom: 1rem;
+        }
+        .portfolio-item h4 {
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         .portfolio-item h4::after {
             content: "+";
