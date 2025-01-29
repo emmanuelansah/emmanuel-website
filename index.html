@@ -16,14 +16,14 @@
         header {
             background: #4CAF50;
             color: white;
-            padding: 1rem 0;
+            padding: 2rem 0;
             text-align: center;
         }
         header img {
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            margin-top: 1rem;
+            margin-bottom: 1rem;
         }
         nav {
             display: flex;
@@ -46,12 +46,76 @@
         section {
             margin: 2rem 0;
         }
+       section h2 {
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 0.5rem;
+        }
         footer {
             text-align: center;
             background: #333;
             color: white;
             padding: 1rem 0;
             margin-top: 2rem;
+        }
+       
+        .portfolio-item {
+            margin-bottom: 1rem;
+        }
+        .portfolio-item h4 {
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .portfolio-item h4::after {
+            content: "+";
+            font-size: 1.5em;
+            transition: transform 0.3s ease-in-out;
+        }
+        .portfolio-item h4.active::after{
+            content: "-";
+        }
+        .portfolio-item p {
+            display: none;
+            margin-top: 0.5rem;
+        }
+         .portfolio-item p.active {
+             display: block;
+         }
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .skill-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+        .skill-item:hover {
+            transform: scale(1.05);
+        }
+        .skill-item h4 {
+            margin-bottom: 0.5rem;
+            border-bottom: 1px solid #ddd;
+        }
+         .experience-item {
+            margin-bottom: 1.5rem;
+        }
+         .experience-item h4 {
+             margin-bottom: 0.5rem;
+         }
+        .experience-item h5{
+            font-style: italic;
+            color: #777;
+            margin-bottom: 0.5rem;
+        }
+        .experience-item ul{
+            padding-left: 20px;
+            margin-top: 0.5rem;
         }
         .btn {
             display: inline-block;
@@ -60,15 +124,29 @@
             background: #4CAF50;
             text-decoration: none;
             border-radius: 5px;
+            margin-top: 1rem;
         }
         .btn:hover {
             background: #45a049;
+        }
+         /* Responsive adjustments */
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem 0;
+            }
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+             nav a {
+                padding: 0.7rem;
+             }
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="https://github.com/emmanuelansah/emmanuel-website/blob/main/profile_pic.png?raw=true" alt="Emmanuel's Picture">
+        <img src="https://github.com/emmanuelansah/emmanuel-website/blob/main/new_pic.jpg?raw=true" alt="Emmanuel's Picture">
         <h1>Emmanuel Ansah</h1>
         <p>Statistician | Data Scientist | Educator</p>
     </header>
@@ -77,6 +155,7 @@
         <a href="#about">About</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
         <a href="#achievements">Achievements</a>
         <a href="#contact">Contact</a>
     </nav>
@@ -85,35 +164,132 @@
         <section id="about">
             <h2>About Me</h2>
             <p>Hello! I'm Emmanuel Ansah, a statistician and data scientist with a strong passion for education, mentorship, and leveraging data to solve real-world problems. Currently pursuing a Master's at AIMS Rwanda, I hold a first-class degree in Statistics from KNUST and have hands-on experience in data analysis, machine learning, and statistical computing.</p>
-            <p>I am skilled in SPSS, R, Python, SQL, Microsoft Power BI, and LaTeX. I have experience in healthcare, finance, and manufacturing, and I actively mentor students and engage in tutoring programs to improve academic performance.</p>
+            <p>I am skilled in SPSS, R, Python, SQL, Microsoft Power BI, and LaTeX. I have experience in healthcare, finance, and manufacturing, and I actively mentor students and engage in tutoring programs to improve academic performance. My expertise spans from statistical modeling to implementing machine learning techniques to solve real world challenges and improve existing systems.</p>
+            <p>I'm a problem-solver, a lifelong learner, and I'm committed to contributing positively through my work. Let's connect and explore how we can innovate together!</p>
         </section>
 
         <section id="portfolio">
             <h2>Portfolio</h2>
-            <p>Here are some of my projects:</p>
-            <ul>
-                <li><strong>Piano App:</strong> Developing a tool to help users learn to play all keys on the piano.</li>
-                <li><strong>Data Analysis Projects:</strong> Statistical insights for healthcare and finance industries.</li>
-                <li><strong>Machine Learning Models:</strong> Predictive models for marketing and sales optimization.</li>
-                <li><strong>Scabies Incidence Modeling:</strong> ARIMA and GLM for disease trend analysis at Kokofu Government Hospital.</li>
-            </ul>
+            <div class="portfolio-item">
+                <h4 onclick="togglePortfolioItem(this)">Piano App
+                    <span></span>
+                </h4>
+                 <p>A tool designed to help users learn to play all keys on the piano, enhancing their musical skills through interactive practice.</p>
+             </div>
+              <div class="portfolio-item">
+                <h4 onclick="togglePortfolioItem(this)">Data Analysis Projects
+                    <span></span>
+                </h4>
+                <p>A suite of projects focused on extracting insightful statistical findings from data in various industries, including healthcare and finance. These analyses guide strategic decisions and process enhancements.</p>
+             </div>
+             <div class="portfolio-item">
+                <h4 onclick="togglePortfolioItem(this)">Machine Learning Models
+                    <span></span>
+                </h4>
+                <p>Projects involving the development of machine learning models that provide predictive insights for marketing, sales optimization, and resource allocation, demonstrating practical application of advanced algorithms. </p>
+             </div>
+             <div class="portfolio-item">
+                <h4 onclick="togglePortfolioItem(this)">Scabies Incidence Modeling
+                    <span></span>
+                </h4>
+                <p>Research project employing ARIMA and GLM methods to analyze and predict the incidence of scabies at Kokofu Government Hospital, contributing to public health planning and intervention.</p>
+             </div>
         </section>
 
         <section id="experience">
             <h2>Experience</h2>
-            <p><strong>Teaching Assistant, KNUST:</strong> Provided academic support, organized tutorial sessions, and prepared course materials.</p>
-            <p><strong>Deputy Audit Head, Ghana Association of Statistics Students:</strong> Demonstrated leadership and organizational skills.</p>
-            <p><strong>Researcher, KNUST:</strong> Conducted undergraduate research on modeling scabies incidence using ARIMA and GLM methods.</p>
-            <p><strong>Data Analyst Intern, Guinness Ghana:</strong> Analyzed production data and conducted statistical analyses for quality control.</p>
+           <div class="experience-item">
+            <h4>Teaching Assistant, Department of Mathematics (KNUST)</h4>
+            <h5>2023-2024</h5>
+            <ul>
+                <li>Prepared and distributed course materials, including PowerPoint presentations, handouts, and problem sets.</li>
+                 <li>Organized tutorial sessions for students to clarify any problems encountered within the course.</li>
+             </ul>
+            </div>
+             <div class="experience-item">
+            <h4>Deputy Audit Head, Ghana Association of Statistics Students (KNUST)</h4>
+           <h5>2022-2023</h5>
+           <ul>
+               <li>Reviewed the Association's income and expenditure accounts.</li>
+               <li>Reported any financial discrepancies to the Association leaders.</li>
+            </ul>
+             </div>
+            <div class="experience-item">
+                <h4>Research Assistant, Department of Mathematics (KNUST)</h4>
+            <h5>2023-2024</h5>
+                <ul>
+                    <li>Assisted faculty members in the statistical analysis of their research works.</li>
+                    <li>Guided undergraduate students in selecting an appropriate statistical method for their research.</li>
+                    <li>Undertook an undergraduate project on Modeling The Incidence Of Scabies Using ARIMA And Generalized Linear Model.</li>
+                </ul>
+            </div>
+             <div class="experience-item">
+            <h4>Data Analyst Intern, Guinness Ghana</h4>
+                <h5>Aug 2021 – Nov 2021</h5>
+                <ul>
+                 <li>Analyzed production data to identify trends and insights, contributing to process improvements.</li>
+                 <li>Supported quality control by conducting statistical analyses on production samples.</li>
+                 <li>Assisted in the development of data-driven reports and dashboards for management.</li>
+               </ul>
+            </div>
+             <div class="experience-item">
+            <h4>Research Intern, MB Laboratory Services, Kumasi - Ghana</h4>
+           <h5>2022-2024</h5>
+             <ul>
+                <li>Managed and cleaned large datasets from routine lab tests to ensure data integrity and accuracy.</li>
+                 <li>Calculated sensitivity, specificity, and predictive values to evaluate the accuracy of diagnostic tests.</li>
+                <li>Worked closely with lab technicians and medical staff to develop data driven reports to inform decisions.</li>
+             </ul>
+            </div>
+
+        </section>
+
+         <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills">
+                <div class="skill-item">
+                    <h4>Statistical Analysis</h4>
+                    <p>Proficient in SPSS, R (data analysis), Python (TensorFlow) for machine learning.</p>
+                </div>
+                 <div class="skill-item">
+                    <h4>Software Tools</h4>
+                    <p>Experienced with Microsoft Office, LATEX, SQL, Microsoft Power BI.</p>
+                </div>
+                 <div class="skill-item">
+                     <h4>Linux</h4>
+                     <p>Terminal commands and shell scripting.</p>
+                </div>
+                 <div class="skill-item">
+                    <h4>Personal Strengths</h4>
+                     <p>Excellent communication, leadership, teamwork, public speaking, and organizational skills</p>
+                 </div>
+                 <div class="skill-item">
+                    <h4>Languages</h4>
+                     <p>English, Basic Communication in French</p>
+                 </div>
+                  <div class="skill-item">
+                    <h4>Machine Learning</h4>
+                     <p>Expertise in developing and implementing machine learning algorithms and models</p>
+                  </div>
+                  <div class="skill-item">
+                       <h4>Big Data Analytics</h4>
+                       <p>Proficient in analyzing and interpreting large, complex datasets to derive meaningful insights.</p>
+                  </div>
+                 <div class="skill-item">
+                       <h4>Topological Data Analysis</h4>
+                     <p>Skilled in using topological concepts to analyze complex data structures and patterns.</p>
+                </div>
+            </div>
         </section>
 
         <section id="achievements">
             <h2>Achievements</h2>
             <ul>
-                <li>Graduated 2nd in my class with a first-class degree in Statistics.</li>
-                <li>Received multiple awards for proficiency in Mathematics and Financial Accounting.</li>
-                <li>Certified in Data Science, Machine Learning, and Professional Ethics.</li>
-                <li>Teaching Assistant of the Year, Department of Mathematics, KNUST.</li>
+               <li><strong>2023:</strong> Second Best Graduating Student in Statistics Class, KNUST</li>
+                <li><strong>2023/2024:</strong> Teaching Assistant of the Year for Mathematics Department, KNUST</li>
+                 <li><strong>2020/2021:</strong> Best Performing Male Student in Statistics 2, KNUST</li>
+                <li><strong>Certifications:</strong> Data Science, Machine Learning, and Professional Ethics</li>
+                <li><strong>Publications:</strong> Research on the incidence of scabies using advanced statistical models</li>
             </ul>
         </section>
 
@@ -121,15 +297,25 @@
             <h2>Contact</h2>
             <p>Feel free to reach out to me:</p>
             <p>Email: <a href="mailto:eansah754@gmail.com">eansah754@gmail.com</a></p>
-            <p>Email: <a href="mailto:emmanuel.ansah@aims.ac.rw">emmanuel.ansah@aims.ac.rw</a></p>
+             <p>Email: <a href="mailto:emmanuel.ansah@aims.ac.rw">emmanuel.ansah@aims.ac.rw</a></p>
             <p>LinkedIn: <a href="https://www.linkedin.com/in/emmanuel-ansah-9b193a216/" target="_blank">linkedin.com/in/emmanuel-ansah-9b193a216</a></p>
             <p>GitHub: <a href="https://github.com/emmanuelansah" target="_blank">github.com/emmanuelansah</a></p>
-            <p>YouTube: <a href="https://youtube.com/@amt_eansah?si=tgoRMIE6tJkyBF9e" target="_blank">youtube.com/@amt_eansah</a></p>
+             <p>YouTube: <a href="https://youtube.com/@amt_eansah?si=tgoRMIE6tJkyBF9e" target="_blank">youtube.com/@amt_eansah</a></p>
+           
+            <a href="https://drive.google.com/drive/folders/1hevWDNF2occ5TUZyL1DXmHam1BqVovz2?usp=drive_link" class="btn" target="_blank">View Certificates/Awards</a>
         </section>
     </div>
 
     <footer>
-        <p>&copy; 2025 Emmanuel Ansah. All Rights Reserved.</p>
+        <p>© 2025 Emmanuel Ansah. All Rights Reserved.</p>
     </footer>
+    <script>
+    function togglePortfolioItem(el) {
+        const portfolioItem = el.parentElement;
+        const portfolioItemContent = portfolioItem.querySelector("p");
+        el.classList.toggle("active");
+        portfolioItemContent.classList.toggle("active");
+    }
+    </script>
 </body>
 </html>
